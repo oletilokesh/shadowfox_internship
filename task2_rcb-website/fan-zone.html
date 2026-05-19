@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCB Fan Zone</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <img src="assests/images/logo.avif" alt="RCB Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="fan-zone.html">Fan Zone</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding: 30px; max-width: 800px; margin: auto; color: white;">
+    <h1 class="section-title" style="text-align: center; color: #f9b208;">Vote Your Favorite RCB Player</h1>
+
+    <form id="poll-form" style="margin-bottom: 30px; padding: 20px; border: 1px solid #f9b208; border-radius: 10px; background: #1a1a1a;">
+      <label style="display: block; margin-bottom: 10px;"><input type="radio" name="player" value="Virat Kohli"> Virat Kohli</label>
+      <label style="display: block; margin-bottom: 10px;"><input type="radio" name="player" value="Dinesh Karthik"> Dinesh Karthik</label>
+      <label style="display: block; margin-bottom: 20px;"><input type="radio" name="player" value="Rajat Patidar"> Rajat Patidar</label>
+      <button type="submit" style="padding: 10px 20px; background: #f9b208; color: black; border: none; border-radius: 5px; font-weight: bold;">Vote</button>
+    </form>
+
+    <div id="poll-result" style="margin-bottom: 40px; font-weight: bold;"></div>
+
+    <h2 style="color: #f9b208;">Fan Comments</h2>
+    <textarea id="comment-input" rows="3" cols="50" placeholder="Leave a comment..."
+      style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px;"></textarea>
+    <button onclick="addComment()" style="padding: 10px 20px; background: #f9b208; color: black; border: none; border-radius: 5px; font-weight: bold;">Post</button>
+
+    <ul id="comment-list" style="list-style: none; margin-top: 20px; padding-left: 0;"></ul>
+
+    <h2 style="margin-top: 50px; color: #f9b208;">Fan Anthem</h2>
+    <iframe width="100%" height="250" src="https://www.youtube.com/embed/bpMrEeWH7gs" frameborder="0" allowfullscreen style="border-radius: 10px; margin-top: 10px;"></iframe>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RCB Fan Page | Designed by Oleti Lokesh</p>
+  </footer>
+
+  <script>
+    document.getElementById('poll-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="player"]:checked');
+      if (selected) {
+        localStorage.setItem('favPlayer', selected.value);
+        document.getElementById('poll-result').innerText = `Thanks for voting: ${selected.value}`;
+      }
+    });
+
+    function addComment() {
+      const comment = document.getElementById('comment-input').value;
+      if (comment.trim()) {
+        const li = document.createElement('li');
+        li.textContent = comment;
+        li.style.padding = '10px';
+        li.style.marginBottom = '10px';
+        li.style.background = '#2a2a2a';
+        li.style.borderRadius = '5px';
+        document.getElementById('comment-list').appendChild(li);
+        document.getElementById('comment-input').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

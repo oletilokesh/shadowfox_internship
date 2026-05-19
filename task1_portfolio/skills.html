@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Oleti Lokesh</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="skills-section reveal">
+      <h1 class="section-title">My Skills</h1>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <img src="icons/html.png" alt="HTML" class="skill-icon" />
+          <h3>HTML5</h3>
+        </div>
+        <div class="skill-box">
+          <img src="icons/css.png" alt="CSS" class="skill-icon" />
+          <h3>CSS3</h3>
+        </div>
+        <div class="skill-box">
+          <img src="icons/javascript.png" alt="JavaScript" class="skill-icon" />
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-box">
+          <img src="icons/python.png" alt="Python" class="skill-icon" />
+          <h3>Python</h3>
+        </div>
+        <div class="skill-box">
+          <img src="icons/java.png" alt="Java" class="skill-icon" />
+          <h3>Java</h3>
+        </div>
+        <div class="skill-box">
+          <img src="icons/sql.png" alt="SQL" class="skill-icon" />
+          <h3>SQL</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

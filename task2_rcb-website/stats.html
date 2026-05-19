@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCB Stats</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <img src="assests/images/logo.avif" alt="RCB Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="fan-zone.html">Fan Zone</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="section-title">Team Performance</h1>
+    <canvas id="statsChart" width="300" height="300"></canvas>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RCB Fan Page | Designed by Oleti Lokesh</p>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('statsChart');
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Wins', 'Losses', 'Ties'],
+        datasets: [{
+          data: [10, 5, 1],
+          backgroundColor: ['#008000', '#da1e37', '#666']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Schedule</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <img src="assests/images/logo.avif" alt="RCB Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="players.html">Players</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="stats.html">Stats</a></li>
+        <li><a href="fan-zone.html">Fan Zone</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="section-title">RCB Match Schedule</h1>
+    <div id="schedule-container" class="card-grid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RCB Fan Page | Designed by Oleti Lokesh</p>
+  </footer>
+
+  <script>
+    fetch('data/schedule.json')
+      .then(res => res.json())
+      .then(matches => {
+        const container = document.getElementById('schedule-container');
+        matches.forEach(match => {
+          const card = document.createElement('div');
+          card.className = 'match-card';
+          card.innerHTML = `
+            <h3>${match.match}</h3>
+            <p>Date: ${match.date}</p>
+            <p>Venue: ${match.venue}</p>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

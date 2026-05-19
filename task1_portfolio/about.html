@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Oleti Lokesh</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section reveal">
+      <h1 class="section-title">About Me</h1>
+      <div class="about-content">
+        <p>
+          Hi, I'm Oleti Lokesh, a passionate and driven B.Tech Computer Science student with a strong interest in Web Development, and Python Programming, skilled in effective communication and teamwork. I love transforming ideas into real-world solutions — whether it's  problem solving and designing modern web experiences.
+
+Over time, I’ve developed a versatile skill set that bridges  various domains of software. From creating To-Do List application , simple calculator , robust password generator using Tkinter module in python and  responsive websites like Full-stack Development for client project  , weather website and , I enjoy challenges that push me to learn and innovate.
+
+I’m always eager to collaborate, build meaningful projects, and grow in the tech space. If you're looking for someone who can combine creativity with code — I'm right here!
+
+
+        </p>
+        <p>
+          I specialize in <strong>Python, and Web Technologies</strong>, and love building projects like Full-stack Development for client project , To-Do List application , simple calculator , robust password generator and stylish websites like  weather website and ipl team website. My focus is always on innovation, usability, and clean design.
+        </p>
+        <p>
+          With a goal to blend creativity with engineering, I strive to build technology that feels natural and helpful.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
